@@ -1,0 +1,284 @@
+body {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 18px;
+}
+
+header, main, footer {
+  max-width: 960px;
+  margin: 0 auto;
+}
+header, footer {
+  text-align: center;
+}
+header {
+  margin-bottom: 2em;
+}
+footer {
+  padding-bottom: 2em;
+}
+section {
+  padding: 1em;
+}
+section > :first-child {
+  margin-top: 0;
+}
+a {
+  color: inherit;
+}
+h2 > a {
+  text-decoration: none;
+}
+a.scroll-to-top {
+  color: #666666;
+  font-size: 0.9rem;
+  font-weight: normal;
+  padding: 1em 1em 1em 0.5em;
+  text-decoration: none;
+}
+h2 > a:hover {
+  text-decoration: underline;
+}
+
+.is-secondary {
+  color: #666666;
+  font-size: 0.9em;
+}
+
+
+
+section:target {
+  border-left: 2px solid #00aa6c;
+}
+section:target h2 a:not(.scroll-to-top) {
+  text-decoration: underline;
+}
+
+/*
+ * NAVIGATION
+ */
+nav {
+  display: flex;
+  justify-content: center;
+}
+nav > a {
+  padding: 1em;
+  font-size: 1.6em;
+  color: inherit;
+  text-decoration: underline;
+}
+nav > a:hover {
+  font-weight: bold;
+}
+
+/*
+ * HEADER
+ */
+.heading__container {
+  border-top: 1px dotted black;
+  border-bottom: 1px dotted black;
+}
+.heading__title, .heading__subtitle, .heading__description {
+  margin: 0;
+}
+
+/*
+ * DESTINATION
+ * https://www.nationalgeographic.com/photography/article/breaking-the-rules
+ */
+.destination {
+  display: flex;
+  flex-direction: row;
+  background: hsla(111, 100%, 100%, 0.7);
+  border-radius: 1em;
+  overflow: hidden;
+  margin: 0 0 2em;
+  color: inherit;
+  text-decoration: none;
+  border: 0.5em solid transparent;
+  box-shadow: 2px 2px 6px hsla(111, 80%, 20%, 0.4);
+  transition: all .1s ease-in-out;
+}
+.destination:hover {
+  background: hsla(111, 80%, 100%, 0.8);
+  transform: scale(1.03);
+}
+.destination--reversed {
+  flex-direction: row-reverse;
+}
+.destination__thumbnail {
+  display: block;
+  float: none;
+  height: auto;
+  flex-shrink: 0;
+  margin: 0;
+  max-width: 40%;
+  min-width: 40%;
+  width: 40%;
+}
+@media only screen and (max-width: 800px) {
+  .destination, .destination--reversed {
+    flex-direction: column;
+  }
+  .destination__thumbnail {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+}
+.destination__content {
+  max-width: none;
+  flex-grow: 1;
+  margin: 0.5em 1em
+}
+.destination__content > :first-child {
+  margin-top: 0;
+}
+.aspect-ratio__parent {
+  position: relative;
+  margin: 0;
+}
+.aspect-ratio__3x2 {
+  padding-bottom: 66.67%;
+  position: relative;
+  overflow: hidden;
+}
+.aspect-ratio__child {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.aspect-ratio__child img {
+  object-fit: cover;
+  height: 100%;
+  min-height: 100%;
+  vertical-align: top;
+  width: 100%;
+}
+
+
+
+
+
+
+
+/*
+ * SOCIAL BADGE
+ */
+.socials {
+  display: flex;
+  padding-bottom: 2em;
+  margin: -0.5em -1em;
+}
+.social-badge {
+  flex:1;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  border-radius: 1em;
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 2px 2px 6px hsla(111, 80%, 20%, 0.4);
+  transition: all .1s ease-in-out;
+  margin: 0.5em 1em;
+}
+.social-badge:hover {
+  transform: scale(1.07);
+}
+@media only screen and (max-width: 800px) {
+  .socials {
+    flex-direction: column;
+  }
+  .social-badge:hover {
+    transform: scale(1.04);
+  }
+}
+.social-badge__primary {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.social-badge:hover .social-badge__secondary {
+  text-decoration: underline;
+}
+.tripadvisor-circle::before{
+  content: " ";
+}
+.tripadvisor-circle {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color:  #00aa6c;
+  position: relative;
+  margin-right: 1px;
+}
+
+
+
+/**
+ * REVIEW
+ */
+.reviews {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 1;
+  margin: -0.5em -1em;
+}
+@media only screen and (max-width: 800px) {
+  .reviews {
+    flex-direction: column;
+  }
+}
+.reviews ~ .reviews {
+  margin-top: 1em;
+}
+.review {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  background: hsla(111, 100%, 100%, 0.7);
+  padding: 1em;
+  border-radius: 1em;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px hsla(111, 80%, 20%, 0.4);
+  transition: all .1s ease-in-out;
+  margin: 0.5em 1em;
+
+}
+.review:hover {
+  transform: scale(1.05);
+}
+.review__title {
+  margin: 0;
+}
+.review__content {
+  color: #333333;
+  font-size: 0.9em;
+}
+
+.review__authorship {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+.review__avatar {
+  border-radius: 50%;
+}
+.review__author {
+  align-self: center;
+  text-align: right;
+}
+.review__quote-sign {
+  flex-grow: 1;
+  text-align: left;
+}
